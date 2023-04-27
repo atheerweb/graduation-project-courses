@@ -1,1 +1,1 @@
-# graduation-project-courses
+# graduation-project-frontend

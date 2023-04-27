@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Tajawal', sans-serif;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+a {
+  transition-duration: 0.1s;
+}
+
+a:hover {
+  opacity: 0.5;
+}
