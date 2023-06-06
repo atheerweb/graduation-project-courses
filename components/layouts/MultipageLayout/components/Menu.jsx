@@ -30,12 +30,11 @@ const Menu = (props) => {
                 placeholder="ابحث عن مستقلين"
                 dir="ltr"
                 inputProps={{style: { textAlign: "end" }}}
-                sx={{display: !media && "none"}}
+                sx={{display: !media && "none", borderRadius: "25px"}}
                 startAdornment={
                     <InputAdornment position="start">
                         <IconButton
                           aria-label="toggle password visibility"
-                          onClick={() => handleShowPasswordClick(0)}
                           edge="start"
                         >
                             <SearchIcon color="primary" />
@@ -51,7 +50,8 @@ const Menu = (props) => {
                             className={styles.menuNavLinks}
                             sx={{
                                 color: link.href === router.pathname ? theme.palette.accent.dark : theme.palette.accent.primary,
-                                fontWeight: link.href === router.pathname && "bold"
+                                fontWeight: link.href === router.pathname && "bold",
+                                textDecoration: "none"
                             }}
                             key={index}
                             href={link.href}
