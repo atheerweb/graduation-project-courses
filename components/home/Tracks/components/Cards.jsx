@@ -7,11 +7,11 @@ const Cards = (props) => {
     const theme = useTheme();
 
     return (
-        <Card className={styles.tracksCards} sx={{translate: props.translate}}>
+        <Card className={styles.tracksCards} sx={{translate: props.translate, transition: 500}}>
             <CardHeader
                 title={props.title}
                 subheader={
-                    <Stack className={styles.tracksCardsSubheaderStack}>
+                    <Stack direction="row" className={styles.tracksCardsSubheaderStack}>
                         <Rating readOnly value={props.ratings} />
                         <Typography>{props.subTitle}</Typography>
                     </Stack>
@@ -19,7 +19,7 @@ const Cards = (props) => {
             />
             <CardMedia component="img" height="194" image="/images/courses_tracks_cards.png" alt="Track" />
             <CardActions disableSpacing>
-                <Stack className={styles.tracksCardsActionsStack}>
+                <Stack direction="row" className={styles.tracksCardsActionsStack}>
                     <IconButton aria-label="add to favorites">
                         <Favorite />
                     </IconButton>

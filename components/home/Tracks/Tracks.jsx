@@ -29,14 +29,15 @@ const Tracks = () => {
     return (
         <Box className={styles.tracks}>
             <Typography variant="h2">مساراتنا</Typography>
-            <Stack className={styles.tracksStack}>
+            <Stack direction="row" className={styles.tracksStack} sx={{transtion: 1000}}>
                 {
                     state.coursesTracks.map((track, index) => (
                         <Button key={index}
                                 className={styles.tracksButtons} 
                                 sx={{
                                     backgroundColor: activeTrack === track[0] ? theme.palette.primary.main : "rgb(217 217 217)",
-                                    color: activeTrack === track[0] ? "white" : "black"
+                                    color: activeTrack === track[0] ? "white" : "black",
+                                    borderRadius: "16px"
                                 }}
                                 onClick={() => handleTrackClick(track[0])}
                         >
@@ -47,7 +48,7 @@ const Tracks = () => {
             </Stack>
             <Stack direction="row" alignItems="center" padding="18px 22px">
                 <ArrowBackIos className={styles.tracksIcons} onClick={() => handleCarousel("Back")} />
-                    <Stack className={styles.tracksCardsStack}>
+                    <Stack direction="row" className={styles.tracksCardsStack}>
                         {
                             state.coursesTracksCards[activeTrack].map((card, index) => (
                                 <Cards key={index} title={card.title} subTitle={card.subTitle} ratings={card.ratings} translate={translateCarousel} />
