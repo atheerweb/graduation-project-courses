@@ -14,7 +14,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap-reverse;
+    flex-wrap: wrap;
     gap: 10px;
 }
 
@@ -25,7 +25,6 @@
 
 .tracksCards {
     min-width: 345px;
-    text-align: right;
 }
 
 .tracksCardsSubheaderStack {
@@ -33,7 +32,6 @@
     padding-top: 8px;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
     align-items: center;
     gap: 10px;
 }

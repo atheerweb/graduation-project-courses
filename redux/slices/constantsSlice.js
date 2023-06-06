@@ -31,12 +31,12 @@ export const constantsSlice = createSlice({
                 {title: "Testimonial Three", body: "Body Three"}
             ],
             coursesTracks: [
-                ["programming", "مهندس برمجيات"],
-                ["business", "إدارة اعمال"],
-                ["accounting", "محاسبه"],
-                ["dataAnalysis", "علوم البيانات"],
+                ["statistics", "إحصائي"],
                 ["robotics", "مهندس روبوتات"],
-                ["statistics", "إحصائي"]
+                ["dataAnalysis", "علوم البيانات"],
+                ["accounting", "محاسبه"],
+                ["business", "إدارة اعمال"],
+                ["programming", "مهندس برمجيات"]
             ],
             coursesTracksCards: {
                 programming: [

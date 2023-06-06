@@ -1,10 +1,18 @@
-import { Box, Typography, Stack, Button } from "@mui/material";
-import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material';
+// MUI Components
+import ArrowBackIos from "@mui/icons-material/ArrowBackIos";
+import ArrowForwardIos from "@mui/icons-material/ArrowForwardIos";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import Cards from "./components/Cards";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
+// Framer Motion
 import { motion } from "framer-motion";
+// Hooks
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import { useTheme } from "@mui/material/styles";
+// CSS Modules
 import styles from "@/styles/modules/home/tracks.module.css";
 
 const Tracks = () => {
@@ -47,7 +55,7 @@ const Tracks = () => {
                     ))
                 }
             </Stack>
-            <Stack direction="row" alignItems="center" padding="18px 22px">
+            <Stack dir="ltr" direction="row" alignItems="center" padding="18px 22px">
                 <ArrowBackIos className={styles.tracksIcons} onClick={() => handleCarousel("Back")} />
                     <Stack component={motion.div} transition={{type: "spring", duration: 1.5}} direction="row" className={styles.tracksCardsStack}>
                         {

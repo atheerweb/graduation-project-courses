@@ -1,14 +1,18 @@
-import { Box, Typography } from "@mui/material";
+// MUI Components
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+// Next Components
 import Image from "next/image";
-import styles from "@/styles/modules/home/hero.module.css";
+// Hooks
 import { useTheme } from "@mui/material/styles";
+// CSS Modules
+import styles from "@/styles/modules/home/hero.module.css";
 
 const Hero = () => {
     const theme = useTheme();
 
     return (
         <Box className={styles.courses}>
-            <Image src={"/images/courses_hero.png"} width={338} height={425} alt="Hero" />
             <Box className={styles.coursesTypographyContainer}>
                 <Typography variant="h1">
                     طريقك للنجاح يبدأ من هنا
@@ -17,6 +21,7 @@ const Hero = () => {
                     أفضل المعلمين من جميع أنحاء مصر و استمتع بأفضل العروص و الأسعار
                 </Typography>
             </Box>
+            <Image src={"/images/courses_hero.png"} width={338} height={425} alt="Hero" />
         </Box>
     )
 }
