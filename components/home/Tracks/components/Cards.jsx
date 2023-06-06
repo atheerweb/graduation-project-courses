@@ -1,4 +1,5 @@
 import { Card, CardHeader, CardMedia, CardActions, IconButton, Stack, Rating, Typography, Link } from "@mui/material";
+import { motion } from "framer-motion";
 import { Favorite } from "@mui/icons-material";
 import styles from "@/styles/modules/home/tracks.module.css";
 import { useTheme } from "@mui/material/styles";
@@ -7,7 +8,7 @@ const Cards = (props) => {
     const theme = useTheme();
 
     return (
-        <Card className={styles.tracksCards} sx={{translate: props.translate, transition: 500}}>
+        <Card component={motion.div} animate={{x: props.translate}} transition={{type: "spring", duration: 0.75 }} className={styles.tracksCards}>
             <CardHeader
                 title={props.title}
                 subheader={

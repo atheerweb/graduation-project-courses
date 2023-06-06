@@ -26,7 +26,6 @@
 .tracksCards {
     min-width: 345px;
     text-align: right;
-    transition: 0.5s; 
 }
 
 .tracksCardsSubheaderStack {
@@ -54,7 +53,6 @@
     align-items: center;
     gap: 22px;
     overflow: hidden;
-    transition: 1s;
 }
 
 .tracksIcons {
