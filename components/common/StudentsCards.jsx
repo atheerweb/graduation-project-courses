@@ -7,30 +7,27 @@ import Typography from "@mui/material/Typography";
 // Hooks
 import { useTheme } from "@mui/material/styles";
 
-const Cards = (props) => {
+const StudentsCards = (props) => {
     const theme = useTheme();
 
     return (
         <Card>
             <CardHeader
                 avatar={
-                    <Avatar src="/images/testimonials_icon.png" alt="Avatar" />
+                    <Avatar src="/images/testimonials_icon.png" alt="Avatar" sx={{ml: 1}} />
                 }
                 titleTypographyProps={{ variant: "h6", fontWeight: "bold" }}
                 subheaderTypographyProps={{color: theme.palette.accent.dark, opacity: 0.87}}
                 title={props.title}
-                subheader={props.body}
+                subheader={props.subTitle}
             />
             <CardContent>
                 <Typography variant="body2" sx={{color: theme.palette.accent.dark, opacity: 0.6}}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+                    {props.body}
                 </Typography>
             </CardContent>
         </Card>
     )
 }
 
-export default Cards;
+export default StudentsCards;

@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 // Components
-import Cards from "./components/Cards";
+import StudentsCards from "@/components/common/StudentsCards";
 // Hooks
 import { useSelector } from "react-redux";
 // CSS Modules
@@ -18,7 +18,7 @@ const Testimonials = (props) => {
             <Grid className={styles.testimonialsGrid}>
                 {
                     testimonialsCards.map((card, index) => (
-                        <Cards key={index} title={card.title} body={card.body} />
+                        <StudentsCards key={index} title={card.title} subTitle={card.subTitle} body={card.body} />
                     ))
                 }
             </Grid>
