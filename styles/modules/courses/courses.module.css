@@ -1,0 +1,35 @@
+.courses {
+    width: 100%;
+    padding: 45px 75px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    gap: 25px;
+}
+
+.filters {
+    width: 275px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 320px);
+    gap: 20px;
+    padding: 0 10px;
+    justify-content: space-around;
+}

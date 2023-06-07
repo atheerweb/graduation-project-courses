@@ -87,7 +87,34 @@ export const constantsSlice = createSlice({
                     {title: "كورس تحليل البيانات", subTitle: "إحصائي", ratings: 5},
                     {title: "كورس تحليل البيانات", subTitle: "إحصائي", ratings: 5}
                 ],
-            }
+            },
+            coursesCards: [
+                {title: "أساسيات مشروع SAP...", ratings: 5, image: "/images/courses-sap.png", body: "تغطية كل شيء عن أساسيات تنفيذ SAP خصوصيات وعموميات مع SAP Activate وتسريع SAP"},
+                {title: "أساسيات مشروع SAP...", ratings: 5, image: "/images/courses-sap.png", body: "تغطية كل شيء عن أساسيات تنفيذ SAP خصوصيات وعموميات مع SAP Activate وتسريع SAP"},
+                {title: "أساسيات مشروع SAP...", ratings: 5, image: "/images/courses-sap.png", body: "تغطية كل شيء عن أساسيات تنفيذ SAP خصوصيات وعموميات مع SAP Activate وتسريع SAP"},
+                {title: "أساسيات مشروع SAP...", ratings: 5, image: "/images/courses-sap.png", body: "تغطية كل شيء عن أساسيات تنفيذ SAP خصوصيات وعموميات مع SAP Activate وتسريع SAP"},
+                {title: "أساسيات مشروع SAP...", ratings: 5, image: "/images/courses-sap.png", body: "تغطية كل شيء عن أساسيات تنفيذ SAP خصوصيات وعموميات مع SAP Activate وتسريع SAP"},
+                {title: "أساسيات مشروع SAP...", ratings: 5, image: "/images/courses-sap.png", body: "تغطية كل شيء عن أساسيات تنفيذ SAP خصوصيات وعموميات مع SAP Activate وتسريع SAP"},
+                {title: "أساسيات مشروع SAP...", ratings: 5, image: "/images/courses-sap.png", body: "تغطية كل شيء عن أساسيات تنفيذ SAP خصوصيات وعموميات مع SAP Activate وتسريع SAP"},
+                {title: "أساسيات مشروع SAP...", ratings: 5, image: "/images/courses-sap.png", body: "تغطية كل شيء عن أساسيات تنفيذ SAP خصوصيات وعموميات مع SAP Activate وتسريع SAP"},
+                {title: "أساسيات مشروع SAP...", ratings: 5, image: "/images/courses-sap.png", body: "تغطية كل شيء عن أساسيات تنفيذ SAP خصوصيات وعموميات مع SAP Activate وتسريع SAP"},
+                {title: "أساسيات مشروع SAP...", ratings: 5, image: "/images/courses-sap.png", body: "تغطية كل شيء عن أساسيات تنفيذ SAP خصوصيات وعموميات مع SAP Activate وتسريع SAP"},
+                {title: "أساسيات مشروع SAP...", ratings: 5, image: "/images/courses-sap.png", body: "تغطية كل شيء عن أساسيات تنفيذ SAP خصوصيات وعموميات مع SAP Activate وتسريع SAP"},
+                {title: "أساسيات مشروع SAP...", ratings: 5, image: "/images/courses-sap.png", body: "تغطية كل شيء عن أساسيات تنفيذ SAP خصوصيات وعموميات مع SAP Activate وتسريع SAP"},
+            ],
+            coursesCheckboxes: [
+                "علوم البيانات",
+                "برمجة الويب",
+                "فرونت إند",
+                "باك إند",
+                "برمجة تطبيقات",
+                "devOps",
+            ],
+            coursesOptions: [
+                "الأفضل",
+                "الأحدث",
+                "الأشهر"
+            ]
         }
     }
 });
