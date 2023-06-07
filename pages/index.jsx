@@ -1,7 +1,7 @@
 import Hero from "@/components/home/Hero/Hero";
 import Tracks from "@/components/home/Tracks/Tracks";
 import Tribute from "@/components/home/Tribute/Tribute";
-import Testimonials from "@/components/home/Testimonials/Testimonials";
+import Testimonials from "@/components/common/Testimonials";
 
 const Courses = () => {
     return (

@@ -1,0 +1,79 @@
+.main {
+    width: 100%;
+    padding: 75px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.intro {
+    width: 100%;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.about {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.checklistContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.checklist {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.accordionItem {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordionItemButtonContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.suggestions {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 320px);
+    justify-content: center;
+    gap: 40px;
+}
+
+@media (max-width: 1000px) {
+    .intro {
+        flex-direction: column-reverse;
+        justify-content: start;
+    }
+}

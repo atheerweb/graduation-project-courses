@@ -1,3 +1,4 @@
+import Link from "next/link";
 // MUI Components
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
@@ -7,7 +8,6 @@ import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
 import Favorite from "@mui/icons-material/Favorite";
 import IconButton from "@mui/material/IconButton";
-import Link from "@mui/material/Link";
 import Rating from "@mui/material/Rating";
 import Typography from "@mui/material/Typography";
 
@@ -43,7 +43,7 @@ const CoursesCards = ({ content }) => {
                 </Typography>
             </CardContent>
             <CardActions sx={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
-                <Link style={{textDecoration: "none"}}>
+                <Link href={{pathname: `/course/${content.id}`}} style={{textDecoration: "none"}}>
                     <Typography color="primary" sx={{cursor: "pointer"}}>
                         شاهد
                     </Typography>
