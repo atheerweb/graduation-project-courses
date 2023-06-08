@@ -1,0 +1,22 @@
+.grid {
+    width: 360px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 61.85px);
+    column-gap: 10px;
+    row-gap: 20px;
+}
+
+.footer {
+    width: 100%;
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media ( max-width: 500px ) {
+    .grid {
+        width: 100%;
+    }
+}

@@ -1,8 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { Twitter, LinkedIn, Facebook, Instagram  } from "@mui/icons-material";
+import Twitter from '@mui/icons-material/Twitter';
+import LinkedIn from '@mui/icons-material/LinkedIn';
+import Facebook from '@mui/icons-material/Facebook';
+import Instagram from '@mui/icons-material/Instagram';
 import { v4 as uuidv4 } from 'uuid';
 
-export const constantsSlice = createSlice({
+const constantsSlice = createSlice({
     name: "constants",
     initialState: {
         value: {
@@ -10,6 +13,13 @@ export const constantsSlice = createSlice({
                 {title: "مستقلين", href: "/freelancers"},
                 {title: "وظائف", href: "/jobs"},
                 {title: "الرئيسية", href: "/"}
+            ],
+            dropItems: [
+              { title: 'برمجة', href: '/courses/programming' },
+              { title: 'إدارة', href: '/courses/business' },
+              { title: 'محاسبة', href: '/courses/accounting' },
+              { title: 'تصميم', href: '/courses/design' },
+              { title: 'مونتاج', href: '/courses/photoshop' },
             ],
             footerLinks: [
                 {title: "أسئلة شائعة", href: "/FAQ"},
@@ -123,6 +133,6 @@ export const constantsSlice = createSlice({
             ]
         }
     }
-});
+})
 
 export default constantsSlice.reducer;
