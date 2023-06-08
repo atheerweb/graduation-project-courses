@@ -13,6 +13,7 @@ import Link from 'next/link';
 import styles from '@/styles/modules/layouts/MultipageLayout/layout.module.css';
 import { useTheme } from '@mui/material/styles';
 import { useRouter } from 'next/router';
+import { Typography } from '@mui/material';
 const StyledMenu = styled((props) => (
   <Menu
     elevation={0}
@@ -84,6 +85,7 @@ export default function CustomizedMenus(props) {
         sx={{
           fontWeight: 'bold',
           color: 'black',
+          fontSize: '16px',
         }}
       >
         {props.name}
@@ -108,7 +110,14 @@ export default function CustomizedMenus(props) {
                   fontWeight: item.href === router.pathname && 'bold',
                 }}
               >
-                {item.title}
+                <Typography
+                  sx={{
+                    color: 'black',
+                    fontWeight: item.href === router.pathname && 'bold',
+                  }}
+                >
+                  {item.title}
+                </Typography>
               </Link>
             </MenuItem>
           );

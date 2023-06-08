@@ -68,7 +68,7 @@ const Header = () => {
             color:
               '/' === router.pathname
                 ? theme.palette.accent.dark
-                : theme.palette.accent.primary,
+                : 'rgb(0, 153, 221)',
             fontWeight: '/' === router.pathname && 'bold',
             textDecoration: 'none',
             p: 0,
@@ -83,14 +83,14 @@ const Header = () => {
       <OutlinedInput
         className={styles.mainNavSearch}
         variant="outlined"
-        placeholder="ابحث عن مستقلين"
+        placeholder="ابحث عن المسارات"
         dir="ltr"
         inputProps={{ style: { textAlign: 'end', borderRadius: '25px' } }}
         sx={{ display: media && 'none', borderRadius: '25px' }}
         startAdornment={
           <InputAdornment position="start">
             <IconButton aria-label="toggle password visibility" edge="start">
-              <SearchIcon color="primary" />
+              <SearchIcon color="secondary" />
             </IconButton>
           </InputAdornment>
         }
