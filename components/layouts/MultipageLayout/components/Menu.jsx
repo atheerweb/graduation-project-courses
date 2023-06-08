@@ -27,7 +27,7 @@ const Menu = (props) => {
             <OutlinedInput
                 className={styles.menuNavTextField}
                 variant="outlined"
-                placeholder="ابحث عن مستقلين"
+                placeholder="ابحث عن مسارات"
                 dir="ltr"
                 inputProps={{style: { textAlign: "end" }}}
                 sx={{display: !media && "none", borderRadius: "25px"}}
