@@ -1,3 +1,9 @@
+.cart {
+  display: grid;
+  place-items: center;
+  padding: 125px 0;
+}
+
 .cartBox {
   width: 320px;
   display: flex;
@@ -5,4 +11,9 @@
   justify-content: center;
   align-items: center;
   gap: 34px;
+}
+
+.cartTypography {
+  text-align: center;
+  font-size: 20px;
 }

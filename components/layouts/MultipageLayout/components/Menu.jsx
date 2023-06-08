@@ -17,7 +17,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import styles from '@/styles/modules/layouts/MultipageLayout/layout.module.css';
 
 const Menu = (props) => {
-    const navLinks = useSelector(state => state.constants.value.navLinks);
+    const navLinks = useSelector(state => state.constants.value.dropItems);
     const theme = useTheme();
     const router = useRouter();
     const media = useMediaQuery("(max-width: 1100px)");
@@ -37,7 +37,7 @@ const Menu = (props) => {
                           aria-label="toggle password visibility"
                           edge="start"
                         >
-                            <SearchIcon color="primary" />
+                            <SearchIcon color="secondary" />
                         </IconButton>
                     </InputAdornment>
                 }
@@ -64,12 +64,12 @@ const Menu = (props) => {
             <Divider />
             <Stack spacing="20px" width="100%">
                 <Link href="/signup">
-                    <Button variant="outlined" color="secondary" sx={{width: "100%", borderColor: theme.palette.accent.secondary}}>
+                    <Button variant="outlined" color="primary" sx={{width: "100%", borderColor: theme.palette.accent.secondary}}>
                         إنشاء حساب
                     </Button>
                 </Link>
                 <Link href="/signin">
-                    <Button variant="contained" color="secondary" sx={{width: "100%", borderColor: theme.palette.accent.secondary}}>
+                    <Button variant="contained" color="primary" sx={{width: "100%", borderColor: theme.palette.accent.secondary, color: "white"}}>
                         تسجيل دخول
                     </Button>
                 </Link>

@@ -1,16 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import {
-  Twitter,
-  LinkedIn,
-  Facebook,
-  Instagram,
-  DifferenceOutlined,
-  PeopleAltOutlined,
-  QuestionAnswerOutlined,
-  VerifiedUserOutlined,
-  BusinessCenterOutlined,
-  PersonOutlineOutlined,
-} from '@mui/icons-material';
+import Twitter from '@mui/icons-material/Twitter';
+import LinkedIn from '@mui/icons-material/LinkedIn';
+import Facebook from '@mui/icons-material/Facebook';
+import Instagram from '@mui/icons-material/Instagram';
 
 export const constantsSlice = createSlice({
   name: 'constants',
@@ -18,11 +10,11 @@ export const constantsSlice = createSlice({
     value: {
       navLinks: [{ title: 'الرئيسية', href: '/' }, { title: 'المسارات' }],
       dropItems: [
-        { title: 'برمجة', href: '/' },
-        { title: 'إدارة', href: '/' },
-        { title: 'محاسبة', href: '/' },
-        { title: 'تصميم', href: '/' },
-        { title: 'مونتاج', href: '/' },
+        { title: 'برمجة', href: '/courses/programming' },
+        { title: 'إدارة', href: '/courses/business' },
+        { title: 'محاسبة', href: '/courses/accounting' },
+        { title: 'تصميم', href: '/courses/design' },
+        { title: 'مونتاج', href: '/courses/photoshop' },
       ],
       footerLinks: [
         { title: 'أسئلة شائعة', href: '/FAQ' },
