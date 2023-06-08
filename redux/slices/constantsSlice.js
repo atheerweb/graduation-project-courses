@@ -9,11 +9,6 @@ const constantsSlice = createSlice({
     name: "constants",
     initialState: {
         value: {
-            navLinks: [
-                {title: "مستقلين", href: "/freelancers"},
-                {title: "وظائف", href: "/jobs"},
-                {title: "الرئيسية", href: "/"}
-            ],
             dropItems: [
               { title: 'برمجة', href: '/courses/programming' },
               { title: 'إدارة', href: '/courses/business' },

@@ -15,7 +15,7 @@ const Dropper = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const router = useRouter();
-  const courses = useSelector((state) => state.constants.value.dropItems);
+  const navLinks = useSelector((state) => state.constants.value.dropItems);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -42,7 +42,7 @@ const Dropper = () => {
       </Box>
         <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
           {
-            courses.map((course, index) => (
+            navLinks.map((course, index) => (
               <Link key={index} style={{textDecoration: "none", color: "grey"}} href={course.href}>
                 <MenuItem onClick={handleClose} dir="rtl" key={index}>
                   {course.title}
