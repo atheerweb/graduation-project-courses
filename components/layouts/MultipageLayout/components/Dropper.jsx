@@ -44,7 +44,7 @@ const Dropper = () => {
           {
             navLinks.map((course, index) => (
               <Link key={index} style={{textDecoration: "none", color: "grey"}} href={course.href}>
-                <MenuItem onClick={handleClose} dir="rtl" key={index}>
+                <MenuItem onClick={handleClose} sx={{width: "125px"}} dir="rtl" key={index}>
                   {course.title}
                 </MenuItem>
               </Link>
