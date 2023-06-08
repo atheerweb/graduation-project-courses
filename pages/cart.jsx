@@ -1,4 +1,4 @@
-import EmptyCart from '@/components/cart/EmptyCart';
+import CartComponent from '@/components/cart/Cart';
 import { Box } from '@mui/material';
 
 const Cart = () => {
@@ -8,12 +8,10 @@ const Cart = () => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        mt: '132px',
-        mb: '132px',
-        marginInline: '470px',
+        py: '132px',
       }}
     >
-      <EmptyCart />
+      <CartComponent />
     </Box>
   );
 };

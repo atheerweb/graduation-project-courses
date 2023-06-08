@@ -22,7 +22,7 @@ import { useRouter } from 'next/router';
 import useMediaQuery from '@mui/material/useMediaQuery';
 // CSS Modules
 import styles from '@/styles/modules/layouts/MultipageLayout/layout.module.css';
-import CustomizedMenus from './Dropper';
+import Dropper from './Dropper';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 const Header = () => {
   const navLinks = useSelector((state) => state.constants.value.navLinks);
@@ -67,8 +67,8 @@ const Header = () => {
           sx={{
             color:
               '/' === router.pathname
-                ? theme.palette.accent.dark
-                : 'rgb(0, 153, 221)',
+                ? theme.palette.secondary.main
+                : theme.palette.accent.dark,
             fontWeight: '/' === router.pathname && 'bold',
             textDecoration: 'none',
             p: 0,
@@ -78,7 +78,7 @@ const Header = () => {
         >
           الرئيسية
         </Link>
-        <CustomizedMenus data={coursesPages} name={'مسارات'} />
+        <Dropper data={coursesPages} name={'مسارات'} />
       </div>
       <OutlinedInput
         className={styles.mainNavSearch}
