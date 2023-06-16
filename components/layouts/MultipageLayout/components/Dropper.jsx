@@ -9,13 +9,13 @@ import Link from 'next/link';
 // Hooks
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useApi } from '@/lib/hooks';
 
 const Dropper = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const router = useRouter();
-  const navLinks = useSelector((state) => state.constants.value.dropItems);
+  const courses = useApi("/courses/category/");
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -42,10 +42,10 @@ const Dropper = () => {
       </Box>
         <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
           {
-            navLinks.map((course, index) => (
-              <Link key={index} style={{textDecoration: "none", color: "grey"}} href={course.href}>
+            courses.map((course, index) => (
+              <Link key={index} style={{textDecoration: "none", color: "grey"}} href={`/courses/${course.category_name}`}>
                 <MenuItem onClick={handleClose} sx={{width: "125px"}} dir="rtl" key={index}>
-                  {course.title}
+                  {course.category_name}
                 </MenuItem>
               </Link>
             ))

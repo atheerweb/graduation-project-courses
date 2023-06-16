@@ -1,6 +1,6 @@
 import Main from "@/components/courses/Main";
 
-const Course = () => {
+const Courses = () => {
     return (
         <>
             <Main />
@@ -8,4 +8,4 @@ const Course = () => {
     )
 }
 
-export default Course;
+export default Courses;
