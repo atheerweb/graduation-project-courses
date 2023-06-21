@@ -3,22 +3,26 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+// Hooks
+import { useApi } from "@/lib/hooks";
+import { useRouter } from "next/router";
 // CSS Modules
 import styles from "@/styles/modules/course/course.module.css";
 
 const About = () => {
+    const { query: { id } } = useRouter();
+    const course = useApi(`/courses/course/${id}`);
+
     return (
         <Box className={styles.about}>
             <Typography variant="h3" color="accent">
                 مسار
             </Typography>
             <Typography variant="h2">
-                فول استاك ويب
+                {course.course_name}
             </Typography>
             <Typography sx={{maxWidth: 575}}>
-                بصفته مقبسًا لجميع المهن (وسيدًا لعدد قليل جدًا) ، يمكن لمهندس Full-Stack إنجاز المشروع من
-                البداية إلى النهاية. احصل على المهارات المتخصصة والمحفظة التي تحتاجها لبدء حياتك المهنية كمهندس
-                متكامل في هذا المسار الوظيفي المنسق.
+                {course.description}
             </Typography>
             <Box className={styles.checklistContainer}>
                 <Box className={styles.checklist}>
