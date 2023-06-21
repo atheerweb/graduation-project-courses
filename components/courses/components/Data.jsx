@@ -3,14 +3,12 @@ import Grid from "@mui/material/Grid";
 // Components
 import CoursesCards from "@/components/common/CoursesCards";
 // Hooks
-import { useApi } from "@/lib/hooks";
-import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
 // CSS Modules
 import styles from "@/styles/modules/courses/courses.module.css";
 
-const Data = ({ filters }) => {
-    const { query } = useRouter();
-    const cards = useApi(`/courses/category_fliter/?cat_has_courses__category_name=${query.slug}`);
+const Data = () => {
+    const cards = useSelector(state => state.api.value.categoryCourses);
 
     return (
         <Grid className={styles.grid}>

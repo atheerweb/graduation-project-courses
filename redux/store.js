@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import constantsSlice from "./slices/constantsSlice";
+import apiSlice from "./slices/apiSlice";
 
 const store = configureStore({
     reducer: {
-        constants: constantsSlice
+        constants: constantsSlice,
+        api: apiSlice
     }
 });
 

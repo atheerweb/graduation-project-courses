@@ -17,7 +17,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import styles from '@/styles/modules/layouts/MultipageLayout/layout.module.css';
 
 const Menu = (props) => {
-    const navLinks = useSelector(state => state.constants.value.dropItems);
+    const categories = useSelector(state => state.api.value.categories);
     const theme = useTheme();
     const router = useRouter();
     const media = useMediaQuery("(max-width: 1100px)");
@@ -45,18 +45,17 @@ const Menu = (props) => {
             <Divider />
             <Stack direction="column" spacing="10px">
                 {
-                    navLinks.map((link, index) => (
+                    categories.map((category, index) => (
                         <Link
                             className={styles.menuNavLinks}
                             sx={{
-                                color: link.href === router.pathname ? theme.palette.accent.dark : theme.palette.accent.primary,
-                                fontWeight: link.href === router.pathname && "bold",
+                                color: theme.palette.accent.dark,
                                 textDecoration: "none"
                             }}
                             key={index}
-                            href={link.href}
+                            href={`/courses/${category.category_name}`}
                         >
-                            {link.title}
+                            {category.category_name}
                         </Link>        
                     ))
                 }

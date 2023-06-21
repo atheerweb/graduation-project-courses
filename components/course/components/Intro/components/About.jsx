@@ -4,14 +4,12 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 // Hooks
-import { useApi } from "@/lib/hooks";
-import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
 // CSS Modules
 import styles from "@/styles/modules/course/course.module.css";
 
 const About = () => {
-    const { query: { id } } = useRouter();
-    const course = useApi(`/courses/course/${id}`);
+    const course = useSelector(state  => state.api.value.oneCourse);
 
     return (
         <Box className={styles.about}>
