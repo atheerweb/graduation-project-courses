@@ -34,14 +34,53 @@ const Header = () => {
   };
 
   return (
-    <Box className={styles.mainNav} sx={{ backgroundColor: theme.palette.accent.light, boxShadow: `0 0 5px ${theme.palette.accent.primary}` }}>
+    <Box
+      className={styles.mainNav}
+      sx={{
+        backgroundColor: theme.palette.accent.light,
+        boxShadow: `0 0 5px ${theme.palette.accent.primary}`,
+      }}
+    >
       <Menu display={display} />
-      <Image width={62} height={41} src="/images/header_logo.png" alt="علمنى" priority />
-      <Stack direction="row" sx={{ display: media && 'none', alignItems: 'center', gap: "65px" }}>
-        <Link href="/" className={styles.navLinks} sx={{ color: '/' === router.pathname ? theme.palette.secondary.main : theme.palette.accent.dark, textDecoration: 'none' }}>
+      <Image
+        width={62}
+        height={41}
+        src="/images/header_logo.png"
+        alt="علمنى"
+        priority
+      />
+      <Stack
+        direction="row"
+        sx={{ display: media && 'none', alignItems: 'center', gap: '65px' }}
+      >
+        <Link
+          href="/"
+          className={styles.navLinks}
+          sx={{
+            color:
+              '/' === router.pathname
+                ? theme.palette.secondary.main
+                : theme.palette.accent.dark,
+            textDecoration: 'none',
+          }}
+        >
           الرئيسية
         </Link>
+
         <Dropper />
+        <Link
+          href="/comingsoon"
+          className={styles.navLinks}
+          sx={{
+            color:
+              '/' === router.pathname
+                ? theme.palette.secondary.main
+                : theme.palette.accent.dark,
+            textDecoration: 'none',
+          }}
+        >
+          مقدم دورة
+        </Link>
       </Stack>
       <OutlinedInput
         className={styles.mainNavSearch}
@@ -72,12 +111,23 @@ const Header = () => {
           </Button>
         </Link>
         <Link href="/signin">
-          <Button variant="contained" color="primary" sx={{ color: theme.palette.accent.light }}>
+          <Button
+            variant="contained"
+            color="primary"
+            sx={{ color: theme.palette.accent.light }}
+          >
             تسجيل دخول
           </Button>
         </Link>
       </Stack>
-      <MenuIcon sx={{ color: theme.palette.primary.main, cursor: 'pointer', display: !media && 'none' }} onClick={handleMenuClick} />
+      <MenuIcon
+        sx={{
+          color: theme.palette.primary.main,
+          cursor: 'pointer',
+          display: !media && 'none',
+        }}
+        onClick={handleMenuClick}
+      />
     </Box>
   );
 };
