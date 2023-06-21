@@ -44,7 +44,7 @@ const Dropper = () => {
           {
             courses.map((course, index) => (
               <Link key={index} style={{textDecoration: "none", color: "grey"}} href={`/courses/${course.category_name}`}>
-                <MenuItem onClick={handleClose} sx={{width: "125px"}} dir="rtl" key={index}>
+                <MenuItem onClick={handleClose} sx={{width: "full", justifyContent: "flex-end"}} key={index}>
                   {course.category_name}
                 </MenuItem>
               </Link>
