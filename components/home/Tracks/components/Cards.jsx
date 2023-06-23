@@ -34,7 +34,7 @@ const Cards = (props) => {
             <CardActions disableSpacing>
                 <Stack direction="row" className={styles.tracksCardsActionsStack}>
                     <Link href="" sx={{color: theme.palette.secondary.main, textDecoration: "none"}}>شاهد</Link>
-                    <IconButton aria-label="add to favorites">
+                    <IconButton disabled aria-label="add to favorites">
                         <Favorite />
                     </IconButton>
                 </Stack>

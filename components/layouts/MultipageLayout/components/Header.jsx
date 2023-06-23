@@ -1,4 +1,5 @@
 // Components
+import AvatarDropper from './AvatarDropper';
 import Dropper from './Dropper';
 import Menu from './Menu';
 // MUI Components
@@ -16,7 +17,7 @@ import Stack from '@mui/material/Stack';
 import Image from 'next/image';
 import Link from 'next/link';
 // Hooks
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTheme } from '@mui/material/styles';
 import { useRouter } from 'next/router';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -24,9 +25,18 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import styles from '@/styles/modules/layouts/MultipageLayout/layout.module.css';
 
 const Header = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const theme = useTheme();
   const router = useRouter();
-  const media = useMediaQuery('(max-width: 1100px)');
+  const media = useMediaQuery('(max-width: 1250px)');
+
+  useEffect(() => {
+    typeof window !== "undefined" &&
+    JSON.parse(localStorage.getItem('coursesUser'))
+      ? setIsLoggedIn(true)
+      : setIsLoggedIn(false);
+  }, [ typeof window ]);
+
   const [display, setDisplay] = useState('none');
 
   const handleMenuClick = () => {
@@ -69,7 +79,7 @@ const Header = () => {
 
         <Dropper />
         <Link
-          href="/comingsoon"
+          href={ isLoggedIn ? "/comingsoon" : '/signin'}
           className={styles.navLinks}
           sx={{
             color:
@@ -97,15 +107,15 @@ const Header = () => {
           </InputAdornment>
         }
       />
-      <Stack direction="row" gap="20px" display={media && 'none'}>
+      {/* <Stack direction="row" gap="20px" display={media && 'none'}>
         <Link href="/cart">
           <IconButton color="secondary" aria-label="add to shopping cart">
             <Badge badgeContent={1} color="primary">
               <ShoppingCartIcon />
             </Badge>
           </IconButton>
-        </Link>
-        <Link href="/signup">
+        </Link> */}
+        {/* <Link href="/signup">
           <Button variant="text" color="primary">
             إنشاء حساب
           </Button>
@@ -119,7 +129,32 @@ const Header = () => {
             تسجيل دخول
           </Button>
         </Link>
+      </Stack> */}
+      <Stack direction="row" gap="20px" display={media && 'none'}>
+        <Link href="/cart">
+          <IconButton color="secondary" aria-label="add to shopping cart">
+            <Badge badgeContent={1} color="primary">
+              <ShoppingCartIcon />
+            </Badge>
+          </IconButton>
+        </Link>
       </Stack>
+      {!isLoggedIn ? (
+        <Stack direction="row" gap="20px" display={media && 'none'}>
+          <Link href="/signup">
+            <Button variant="outlined" color="primary">
+              إنشاء حساب
+            </Button>
+          </Link>
+          <Link href="/signin">
+            <Button variant="contained" color="primary" sx={{ color: theme.palette.accent.light }}>
+              تسجيل دخول
+            </Button>
+          </Link>
+        </Stack>
+      ) : (
+        <AvatarDropper />
+      )}
       <MenuIcon
         sx={{
           color: theme.palette.primary.main,

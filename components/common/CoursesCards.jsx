@@ -36,7 +36,7 @@ const CoursesCards = ({ content }) => {
             <CardMedia
                 sx={{ width: "100%" }}
                 component="img"
-                image={content.image}
+                image={"/images/courses-sap.png"}
                 title="SAP"
             />
             <CardContent>
@@ -50,7 +50,7 @@ const CoursesCards = ({ content }) => {
                         شاهد
                     </Typography>
                 </Link>
-                <IconButton aria-label="add to favorites">
+                <IconButton disabled aria-label="add to favorites">
                     <Favorite />
                 </IconButton>
             </CardActions>
