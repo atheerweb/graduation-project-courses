@@ -9,6 +9,7 @@ import Typography from "@mui/material/Typography";
 // Framer Motion
 import { motion } from "framer-motion";
 // Hooks
+import { useApi } from "@/lib/hooks";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import { useTheme } from "@mui/material/styles";
@@ -17,21 +18,25 @@ import styles from "@/styles/modules/home/tracks.module.css";
 
 const Tracks = () => {
     const state = useSelector(state => state.constants.value);
+    const categories = useSelector(state => state.api.value.categories).map(category => (category.category_name));
     const theme = useTheme();
     const [translateCarousel, setTranslateCarousel] = useState(0);
-    const [activeTrack, setActiveTrack] = useState("statistics");
+    const [activeTrack, setActiveTrack] = useState(categories[0]);
+    const courses = useApi(`/courses/category_fliter/?cat_has_courses__category_name=${activeTrack}`);
 
     const handleTrackClick = (newTrack) => {
         setActiveTrack(newTrack);
     }
 
     const handleCarousel = (arrow) => {
-        if (arrow === "Next") {
-            Math.abs(translateCarousel) === (state.coursesTracksCards[activeTrack].length - 1) * 367 ?
-            setTranslateCarousel(0) :
-            setTranslateCarousel(previous => previous - 367)
-        } else {
-            translateCarousel < 0 && setTranslateCarousel(previous => previous + 367);
+        if (courses) {
+            if (arrow === "Next") {
+                Math.abs(translateCarousel) === (courses.length - 1) * 367 ?
+                setTranslateCarousel(0) :
+                setTranslateCarousel(previous => previous - 367)
+            } else {
+                translateCarousel < 0 && setTranslateCarousel(previous => previous + 367);
+            }
         }
     }
 
@@ -40,17 +45,17 @@ const Tracks = () => {
             <Typography variant="h2">مساراتنا</Typography>
             <Stack direction="row" className={styles.tracksStack} sx={{transtion: 1000}}>
                 {
-                    state.coursesTracks.map((track, index) => (
+                    categories.map((track, index) => (
                         <Button key={index}
                                 className={styles.tracksButtons} 
                                 sx={{
-                                    backgroundColor: activeTrack === track[0] ? theme.palette.primary.main : "rgb(217 217 217)",
-                                    color: activeTrack === track[0] ? "white" : "black",
+                                    backgroundColor: activeTrack === track ? theme.palette.primary.main : "rgb(217 217 217)",
+                                    color: activeTrack === track ? "white" : "black",
                                     borderRadius: "16px"
                                 }}
-                                onClick={() => handleTrackClick(track[0])}
+                                onClick={() => handleTrackClick(track)}
                         >
-                            {track[1]}
+                            {track}
                         </Button>
                     ))
                 }
@@ -59,8 +64,9 @@ const Tracks = () => {
                 <ArrowBackIos className={styles.tracksIcons} onClick={() => handleCarousel("Back")} />
                     <Stack component={motion.div} transition={{type: "spring", duration: 1.5}} direction="row" className={styles.tracksCardsStack}>
                         {
-                            state.coursesTracksCards[activeTrack].map((card, index) => (
-                                <Cards key={index} title={card.title} subTitle={card.subTitle} ratings={card.ratings} translate={translateCarousel} />
+                            courses &&
+                            courses.map(course => (
+                                <Cards key={course.course_id} id={course.course_id} title={course.course_name} subTitle={course.description} ratings={Math.floor((Math.random() * 5) + 1)} translate={translateCarousel} />
                             ))
                         }
                     </Stack>

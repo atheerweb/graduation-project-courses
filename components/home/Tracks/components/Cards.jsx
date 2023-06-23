@@ -20,7 +20,7 @@ const Cards = (props) => {
     const theme = useTheme();
 
     return (
-        <Card dir="rtl" component={motion.div} animate={{x: props.translate}} transition={{type: "spring", duration: 0.75 }} className={styles.tracksCards}>
+        <Card sx={{maxWidth: 367}} dir="rtl" component={motion.div} animate={{x: props.translate}} transition={{type: "spring", duration: 0.75 }} className={styles.tracksCards}>
             <CardHeader
                 title={props.title}
                 subheader={
@@ -33,7 +33,7 @@ const Cards = (props) => {
             <CardMedia component="img" height="194" image="/images/courses_tracks_cards.png" alt="Track" />
             <CardActions disableSpacing>
                 <Stack direction="row" className={styles.tracksCardsActionsStack}>
-                    <Link href="" sx={{color: theme.palette.secondary.main, textDecoration: "none"}}>شاهد</Link>
+                    <Link href={`/course/${props.id}`} sx={{color: theme.palette.secondary.main, textDecoration: "none"}}>شاهد</Link>
                     <IconButton disabled aria-label="add to favorites">
                         <Favorite />
                     </IconButton>
