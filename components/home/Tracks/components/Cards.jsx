@@ -15,6 +15,7 @@ import { motion } from "framer-motion";
 import { useTheme } from "@mui/material/styles";
 // CSS Modules
 import styles from "@/styles/modules/home/tracks.module.css";
+import { truncating } from "@/lib/truncating";
 
 const formattingPrice = (price) => {
   return new Intl.NumberFormat("ar-AR", {
@@ -36,7 +37,7 @@ const Cards = (props) => {
       className={styles.tracksCards}
     >
       <CardHeader
-        title={props.title}
+        title={truncating(props.title , 25)}
         subheader={
           <Stack direction="row" className={styles.tracksCardsSubheaderStack}>
             <Rating readOnly value={props.ratings} />

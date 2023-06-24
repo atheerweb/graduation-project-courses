@@ -17,6 +17,8 @@ import { useTheme } from "@mui/material/styles";
 // CSS Modules
 import styles from "@/styles/modules/home/tracks.module.css";
 
+
+
 const Tracks = () => {
   const state = useSelector((state) => state.constants.value);
   const categories = useSelector((state) => state.api.value.categories).map(
