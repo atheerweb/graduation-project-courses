@@ -29,7 +29,7 @@ const Cards = (props) => {
 
   return (
     <Card
-      sx={{ maxWidth: 367 }}
+      sx={{ width: 367 }}
       dir="rtl"
       component={motion.div}
       animate={{ x: props.translate }}
