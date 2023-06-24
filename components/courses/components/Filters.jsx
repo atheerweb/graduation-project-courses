@@ -43,25 +43,6 @@ const Filters = ({ setFilters }) => {
                 }
               </Select>
             </FormControl>
-            <FormControl className={styles.checkboxes} component="fieldset" variant="standard">
-                <FormLabel component="legend">
-                    المسارات
-                </FormLabel>
-                <FormGroup>
-                  {
-                    checkboxes.map((checkbox, index) => (
-                      <FormControlLabel
-                        key={index}
-                        sx={{m: 0}}
-                        label={checkbox}
-                        control={
-                          <Checkbox name={checkbox} sx={{pr: 0}} />
-                        }
-                      />
-                    ))
-                  }
-                </FormGroup>
-            </FormControl>
             <Box>
                 <Typography component="legend" sx={{mb: 1}}>
                     التقييم
