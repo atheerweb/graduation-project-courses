@@ -36,8 +36,8 @@ const CoursesCards = ({ content }) => {
             <CardMedia
                 sx={{ width: "100%" }}
                 component="img"
-                image={"/images/courses-sap.png"}
-                title="SAP"
+                image={content.image_url}
+                title={content.course_name}
             />
             <CardContent>
                 <Typography variant="body2" color="text.secondary">
