@@ -17,30 +17,52 @@ import { useTheme } from "@mui/material/styles";
 import styles from "@/styles/modules/home/tracks.module.css";
 
 const Cards = (props) => {
-    const theme = useTheme();
+  const theme = useTheme();
 
-    return (
-        <Card sx={{maxWidth: 367}} dir="rtl" component={motion.div} animate={{x: props.translate}} transition={{type: "spring", duration: 0.75 }} className={styles.tracksCards}>
-            <CardHeader
-                title={props.title}
-                subheader={
-                    <Stack direction="row" className={styles.tracksCardsSubheaderStack}>
-                        <Rating readOnly value={props.ratings} />
-                        <Typography>{props.subTitle}</Typography>
-                    </Stack>
-                }
-            />
-            <CardMedia component="img" height="194" image="/images/courses_tracks_cards.png" alt="Track" />
-            <CardActions disableSpacing>
-                <Stack direction="row" className={styles.tracksCardsActionsStack}>
-                    <Link href={`/course/${props.id}`} sx={{color: theme.palette.secondary.main, textDecoration: "none"}}>شاهد</Link>
-                    <IconButton disabled aria-label="add to favorites">
-                        <Favorite />
-                    </IconButton>
-                </Stack>
-            </CardActions>
-        </Card>
-    )
-}
+  return (
+    <Card
+      sx={{ maxWidth: 367 }}
+      dir="rtl"
+      component={motion.div}
+      animate={{ x: props.translate }}
+      transition={{ type: "spring", duration: 0.75 }}
+      className={styles.tracksCards}
+    >
+      <CardHeader
+        title={props.title}
+        subheader={
+          <Stack direction="row" className={styles.tracksCardsSubheaderStack}>
+            <Rating readOnly value={props.ratings} />
+            <Typography
+              sx={{ fontWeight: "bold", color: "black", fontSize: "1.2em" }}
+            >
+              {JSON.parse(props.price)}
+              {"$"}
+            </Typography>
+          </Stack>
+        }
+      />
+      <CardMedia
+        component="img"
+        height="194"
+        image="/images/courses_tracks_cards.png"
+        alt="Track"
+      />
+      <CardActions disableSpacing>
+        <Stack direction="row" className={styles.tracksCardsActionsStack}>
+          <Link
+            href={`/course/${props.id}`}
+            sx={{ color: theme.palette.secondary.main, textDecoration: "none" }}
+          >
+            شاهد
+          </Link>
+          <IconButton disabled aria-label="add to favorites">
+            <Favorite />
+          </IconButton>
+        </Stack>
+      </CardActions>
+    </Card>
+  );
+};
 
 export default Cards;
