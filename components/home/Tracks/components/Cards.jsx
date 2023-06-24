@@ -16,6 +16,13 @@ import { useTheme } from "@mui/material/styles";
 // CSS Modules
 import styles from "@/styles/modules/home/tracks.module.css";
 
+const formattingPrice = (price) => {
+  return new Intl.NumberFormat("ar-AR", {
+    style: "currency",
+    currency: "EGP",
+  }).format(price);
+};
+
 const Cards = (props) => {
   const theme = useTheme();
 
@@ -34,10 +41,14 @@ const Cards = (props) => {
           <Stack direction="row" className={styles.tracksCardsSubheaderStack}>
             <Rating readOnly value={props.ratings} />
             <Typography
-              sx={{ fontWeight: "bold", color: "black", fontSize: "1.2em" }}
+              sx={{
+                fontWeight: "bold",
+                color: "black",
+                fontSize: "1.15em",
+                color: "rgb(255, 153, 51)",
+              }}
             >
-              {JSON.parse(props.price)}
-              {"$"}
+              {formattingPrice(props.price)}
             </Typography>
           </Stack>
         }
