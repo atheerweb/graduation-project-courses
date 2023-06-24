@@ -25,9 +25,9 @@ const Content = () => {
             <Box sx={{width: "75%"}}>
                 {
                     accordions.map((accordion, index) => (
-                        <Accordion key={accordion.id} disabled={index > 1} sx={{width: "100%"}}>
+                        <Accordion key={accordion.id} disabled={index !== 0} sx={{width: "100%"}}>
                             <AccordionSummary
-                              expandIcon={index > 1 ? <LockOutlinedIcon /> : <ExpandMore />}
+                              expandIcon={index !== 0 ? <LockOutlinedIcon /> : <ExpandMore />}
                               aria-controls="panel1a-content"
                               id="panel1a-header"
                             >
@@ -46,7 +46,7 @@ const Content = () => {
                                               <Typography color={index !== 0 ? "GrayText" : "primary"}>
                                                   {lesson.duration}
                                               </Typography>
-                                              <Button disabled={index !== 0} onClick={() => router.push(`/course/${accordion.id}`)} variant="outlined">
+                                              <Button disabled={index !== 0} onClick={() => window.scrollTo(0, 0)} variant="outlined">
                                                   شاهد
                                               </Button>
                                           </Box>

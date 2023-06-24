@@ -22,13 +22,8 @@ const AvatarDropper = () => {
 
   const handleClose = () => {
     setAnchorEl(null);
-    client
-      .post('/accounts/api/logout/', {
-        username: 'aamerov',
-        password: 'aamer-20162020',
-      })
-      .then(localStorage.removeItem('coursesUser'))
-      .then(router.push('/'));
+    localStorage.removeItem('coursesUser');
+    router.push('/');
   };
 
   const closingHandle = () => {

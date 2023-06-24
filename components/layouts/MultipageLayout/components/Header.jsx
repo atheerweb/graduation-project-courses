@@ -119,21 +119,6 @@ const Header = () => {
           مقدم دورة
         </Link>
       </Stack>
-      {/* <OutlinedInput
-        className={styles.mainNavSearch}
-        variant="outlined"
-        placeholder="ابحث عن المسارات"
-        dir="ltr"
-        inputProps={{ style: { textAlign: 'end', borderRadius: '25px' } }}
-        sx={{ display: media && 'none', borderRadius: '25px' }}
-        startAdornment={
-          <InputAdornment position="start">
-            <IconButton aria-label="toggle password visibility" edge="start">
-              <SearchIcon color="secondary" />
-            </IconButton>
-          </InputAdornment>
-        }
-      /> */}
       <>
       <Box
         
@@ -178,7 +163,7 @@ const Header = () => {
       <Stack direction="row" gap="20px" display={media && 'none'}>
         <Link href="/cart">
           <IconButton color="secondary" aria-label="add to shopping cart">
-            <Badge badgeContent={1} color="primary">
+            <Badge badgeContent={"0"} color="primary">
               <ShoppingCartIcon />
             </Badge>
           </IconButton>

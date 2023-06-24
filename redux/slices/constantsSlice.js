@@ -120,9 +120,8 @@ const constantsSlice = createSlice({
             ],
             courseAccordions: [
                 {id: "0", track: "المقدمة", content: [{title: "المقدمة", duration: "1:32"}, {title: "المهم", duration: "5:12"}, {title: "الخاتمة", duration: "0:15"}]},
-                {id: "1", track: "فرونت إند", content: [{title: "المقدمة", duration: "1:32"}, {title: "المهم", duration: "5:12"}, {title: "الخاتمة", duration: "0:15"}]},
-                {id: "2", track: "باك إند", content: [{title: "المقدمة", duration: "1:32"}, {title: "المهم", duration: "5:12"}, {title: "الخاتمة", duration: "0:15"}]},
-                {id: "3", track: "داتا بيز", content: [{title: "المقدمة", duration: "1:32"}, {title: "المهم", duration: "5:12"}, {title: "الخاتمة", duration: "0:15"}]}
+                {id: "1", track: "المهم", content: [{title: "المقدمة", duration: "1:32"}, {title: "المهم", duration: "5:12"}, {title: "الخاتمة", duration: "0:15"}]},
+                {id: "2", track: "الخاتمة", content: [{title: "المقدمة", duration: "1:32"}, {title: "المهم", duration: "5:12"}, {title: "الخاتمة", duration: "0:15"}]}
             ]
         }
     }
