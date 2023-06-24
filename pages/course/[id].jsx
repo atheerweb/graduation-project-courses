@@ -8,7 +8,7 @@ import { useDispatch } from "react-redux";
 
 const Course = ({ course }) => {
     const dispatch = useDispatch();
-    course && dispatch(setOneCourse({ value: course }));
+    dispatch(setOneCourse({ value: course }));
 
     return (
         <Main />

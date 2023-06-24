@@ -9,7 +9,7 @@ import { setCategoryCourses } from "@/redux/slices/apiSlice";
 
 const Courses = ({ categoryCourses }) => {
     const dispatch = useDispatch();
-    categoryCourses && dispatch(setCategoryCourses({ value: categoryCourses }));
+    dispatch(setCategoryCourses({ value: categoryCourses }));
 
     return (
         <>
