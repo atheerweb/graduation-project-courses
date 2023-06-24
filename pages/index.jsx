@@ -11,7 +11,7 @@ import { useDispatch } from "react-redux";
 
 const Courses = ({ categories }) => {
     const dispatch = useDispatch();
-    categories && dispatch(setCategories({ value: categories }));
+    dispatch(setCategories({ value: categories }));
     
     return (
         <>

@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 // Next Components
 import Image from "next/image";
 // Hooks
+import { useApi } from "@/lib/hooks";
 import { useSelector } from "react-redux";
 import { useTheme } from "@mui/material/styles";
 // CSS Modules
@@ -13,6 +14,7 @@ import styles from '@/styles/modules/layouts/MultipageLayout/layout.module.css';
 
 const Footer = () => {
     const { footerLinks, footerIcons } = useSelector(state => state.constants.value);
+    const courses = useApi("/courses/category/");
     const theme = useTheme();
 
     return (
@@ -29,6 +31,13 @@ const Footer = () => {
                         footerLinks.map((link, index) => (
                             <Link key={index} href={link.href} sx={{textDecoration: "none", color: theme.palette.accent.primary}} className={styles.footerLinks}>
                                 {link.title}
+                            </Link>
+                        ))
+                    }
+                    {
+                        courses.map((course, index) => (
+                            <Link key={index} sx={{textDecoration: "none", color: theme.palette.accent.primary}} className={styles.footerLinks} href={`/courses/${course.category_name}`}>
+                                {course.category_name}
                             </Link>
                         ))
                     }

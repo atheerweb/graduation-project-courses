@@ -5,6 +5,7 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import ExpandMore from "@mui/icons-material/ExpandMore";
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from "@mui/material/Typography";
 // Hooks
 import { useSelector } from "react-redux";
@@ -23,10 +24,10 @@ const Content = () => {
             </Typography>
             <Box sx={{width: "75%"}}>
                 {
-                    accordions.map(accordion => (
-                        <Accordion key={accordion.id} sx={{width: "100%"}}>
+                    accordions.map((accordion, index) => (
+                        <Accordion key={accordion.id} disabled={index > 1} sx={{width: "100%"}}>
                             <AccordionSummary
-                              expandIcon={<ExpandMore />}
+                              expandIcon={index > 1 ? <LockOutlinedIcon /> : <ExpandMore />}
                               aria-controls="panel1a-content"
                               id="panel1a-header"
                             >
@@ -36,16 +37,16 @@ const Content = () => {
                             </AccordionSummary>
                             {
                                 accordion.content.map((lesson, index) => (
-                                    <AccordionDetails key={index} sx={{borderTop: "solid silver 1px"}}>
+                                    <AccordionDetails key={index} sx={{backgroundColor: index !== 0 ? "lightgray" : "white", borderTop: "solid silver 1px"}}>
                                       <Box className={styles.accordionItem}>
-                                          <Typography>
+                                          <Typography color={index !== 0 ? "GrayText" : "primary"}>
                                             {lesson.title}
                                           </Typography>
                                           <Box className={styles.accordionItemButtonContainer}>
-                                              <Typography color="primary">
+                                              <Typography color={index !== 0 ? "GrayText" : "primary"}>
                                                   {lesson.duration}
                                               </Typography>
-                                              <Button onClick={() => router.push(`/course/${accordion.id}`)} variant="outlined">
+                                              <Button disabled={index !== 0} onClick={() => router.push(`/course/${accordion.id}`)} variant="outlined">
                                                   شاهد
                                               </Button>
                                           </Box>
