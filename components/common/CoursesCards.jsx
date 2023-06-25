@@ -35,14 +35,14 @@ const CoursesCards = ({ content }) => {
         }
       />
       <CardMedia
-        sx={{ width: "100%" }}
+        sx={{ width: "100%", height: 200 }}
         component="img"
         image={content.image_url}
         title={content.course_name}
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          {truncating(content.description , 183)}
+          {truncating(content.description , 125)}
         </Typography>
       </CardContent>
       <CardActions

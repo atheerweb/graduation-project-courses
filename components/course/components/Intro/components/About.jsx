@@ -1,6 +1,7 @@
 // MUI Components
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 // Hooks
 import { useSelector } from "react-redux";
 // CSS Modules
@@ -22,6 +23,26 @@ const About = () => {
             <Typography sx={{maxWidth: 575}}>
                 {course.description}
             </Typography>
+            <Box className={styles.checklistContainer}>
+                <Box className={styles.checklist}>
+                    <CheckCircleIcon color="secondary" />
+                    <Typography>
+                        المقدمة
+                    </Typography>
+                </Box>
+                <Box className={styles.checklist}>
+                    <CheckCircleIcon color="secondary" />
+                    <Typography>
+                        المهم
+                    </Typography>
+                </Box>
+                <Box className={styles.checklist}>
+                    <CheckCircleIcon color="secondary" />
+                    <Typography>
+                        الخاتمة
+                    </Typography>
+                </Box>
+            </Box>
         </Box>
     )
 }

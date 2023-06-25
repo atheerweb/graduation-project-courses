@@ -1,48 +1,23 @@
 import Box from "@mui/material/Box";
-import Checkbox from "@mui/material/Checkbox";
-import FormControl from "@mui/material/FormControl";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormGroup from "@mui/material/FormGroup";
-import FormLabel from "@mui/material/FormLabel";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
 import Rating from "@mui/material/Rating";
-import Select from "@mui/material/Select";
 import Typography from "@mui/material/Typography";
+import OutlinedInput from "@mui/material/OutlinedInput";
 // Hooks
 import { useState } from "react";
-import { useSelector } from "react-redux";
 // CSS Modules
 import styles from "@/styles/modules/courses/courses.module.css";
 
 const Filters = ({ setFilters }) => {
-    const [activeOption, setActiveOption] = useState("");
-    const [rating, setRating] = useState(5);
-    const checkboxes = useSelector(state => state.constants.value.coursesCheckboxes);
-    const options = useSelector(state => state.constants.value.coursesOptions);
+    const [rating, setRating] = useState(1);
 
     return (
         <Box className={styles.filters}>
-            <FormControl fullWidth>
-              <InputLabel id="demo-simple-select-label">
-                ترتيب حسب
-              </InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                label="ترتيب حسب"
-                onChange={(event) => setActiveOption(event.target.value)}
-                value={activeOption}
-              >
-                {
-                  options.map((option, index) => (
-                    <MenuItem key={index} value={option}>
-                      {option}  
-                    </MenuItem>
-                  ))
-                }
-              </Select>
-            </FormControl>
+            <OutlinedInput 
+                variant={"outlined"}
+                type={"text"}
+                placeholder={"بحث"}
+                onChange={(event) => {setFilters({ type: "title", payload: event.target.value })}}
+            />
             <Box>
                 <Typography component="legend" sx={{mb: 1}}>
                     التقييم
@@ -52,7 +27,7 @@ const Filters = ({ setFilters }) => {
                     max={5}
                     dir="ltr"
                     name="unique-rating"
-                    onChange={(event, newValue) => {setRating(newValue); setFilters({ratings: newValue})}}
+                    onChange={(event, newValue) => {setRating(newValue); setFilters({type: "ratings", payload: newValue})}}
                 />
             </Box>
         </Box>

@@ -4,12 +4,19 @@ import Box from "@mui/material/Box";
 import Data from "./Data";
 import Filters from "./Filters";
 // Hooks
-import { useState } from "react";
+import { useReducer } from "react";
 // CSS Modules
 import styles from "@/styles/modules/courses/courses.module.css";
 
+const reducer = (state, action) => {
+    switch (action.type) {
+        case "title": return { title: action.payload, ratings: state.ratings };
+        default: return { title: state.title, ratings: action.payload };
+    }
+}
+
 const Content = () => {
-    const [ filters, setFilters ] = useState({ratings: 5});
+    const [ filters, setFilters ] = useReducer(reducer, {title: "", ratings: 5});
     
     return (
         <Box className={styles.content}>
