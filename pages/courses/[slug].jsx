@@ -1,7 +1,7 @@
 // Components
 import Main from "@/components/courses/Main";
 // Hooks
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 // APIs
 import client from "@/lib/client";
 import { setCategoryCourses } from "@/redux/slices/apiSlice";
@@ -9,7 +9,8 @@ import { setCategoryCourses } from "@/redux/slices/apiSlice";
 
 const Courses = ({ categoryCourses }) => {
     const dispatch = useDispatch();
-    dispatch(setCategoryCourses({ value: categoryCourses.map(course => ({ ...course, ratings: Math.floor((Math.random() * 5) + 1) })) }));
+    const ratings = useSelector(state => state.constants.value.ratings);
+    dispatch(setCategoryCourses({ value: categoryCourses.map((course, index) => ({ ...course, ratings: ratings[index] })) }));
 
     return (
         <>

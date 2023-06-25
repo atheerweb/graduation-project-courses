@@ -13,8 +13,6 @@ import Typography from "@mui/material/Typography";
 import { truncating } from "@/lib/truncating";
 
 const CoursesCards = ({ content }) => {
-  const ratings = Math.floor(Math.random() * 5 + 1);
-
   return (
     <Card sx={{ width: 345, height: "fit-content" }}>
       <CardHeader
@@ -29,8 +27,8 @@ const CoursesCards = ({ content }) => {
             sx={{ display: "flex", alignItems: "center", gap: "10px", px: 1.5 }}
           >
             <Typography component="legend">التقييمات</Typography>
-            <Rating size="small" name="read-only" value={ratings} readOnly />
-            <Typography color="primary">{ratings}</Typography>
+            <Rating size="small" name="read-only" value={content.ratings} readOnly />
+            <Typography color="primary">{content.ratings}</Typography>
           </Box>
         }
       />

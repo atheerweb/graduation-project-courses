@@ -20,10 +20,10 @@ import styles from "@/styles/modules/home/tracks.module.css";
 
 
 const Tracks = () => {
-  const state = useSelector((state) => state.constants.value);
   const categories = useSelector((state) => state.api.value.categories).map(
     (category) => category.category_name
   );
+  const ratings = useSelector(state => state.constants.value.ratings);
   const theme = useTheme();
   const [translateCarousel, setTranslateCarousel] = useState(0);
   const [activeTrack, setActiveTrack] = useState(categories[0]);
@@ -86,14 +86,14 @@ const Tracks = () => {
           className={styles.tracksCardsStack}
         >
           {courses &&
-            courses.map((course) => (
+            courses.map((course, index) => (
               <Cards
                 key={course.course_id}
                 id={course.course_id}
                 title={course.course_name}
                 subTitle={course.description}
                 price={course.price}
-                ratings={Math.floor(Math.random() * 5 + 1)}
+                ratings={ratings[index]}
                 translate={translateCarousel}
               />
             ))}
